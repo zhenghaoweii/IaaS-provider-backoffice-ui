@@ -399,6 +399,9 @@ const mockDatacenters = [
         location: "Virginia, USA",
         apiEndpoint: "https://proxmox-us-east.example.com:8006",
         status: "active",
+        infrastructureType: "rented",
+        hardwareVendor: "OVH",
+        managementType: "managed",
         createdAt: "2024-01-15T10:00:00Z",
         updatedAt: "2024-01-15T10:00:00Z"
     },
@@ -409,6 +412,9 @@ const mockDatacenters = [
         location: "Frankfurt, Germany",
         apiEndpoint: "https://proxmox-eu-west.example.com:8006",
         status: "active",
+        infrastructureType: "self-hosted",
+        hardwareVendor: "Internal",
+        managementType: "manual",
         createdAt: "2024-02-01T10:00:00Z",
         updatedAt: "2024-02-01T10:00:00Z"
     },
@@ -419,6 +425,9 @@ const mockDatacenters = [
         location: "Singapore",
         apiEndpoint: "https://proxmox-asia.example.com:8006",
         status: "maintenance",
+        infrastructureType: "rented",
+        hardwareVendor: "Hetzner",
+        managementType: "managed",
         createdAt: "2024-03-10T10:00:00Z",
         updatedAt: "2024-03-10T10:00:00Z"
     }
@@ -588,6 +597,12 @@ const mockServers = [
         os: "Ubuntu 22.04",
         proxmoxVmid: 101,
         isMaintenance: false,
+        tags: [
+            "web",
+            "production",
+            "public"
+        ],
+        lastBackup: "2024-12-14T02:00:00Z",
         createdAt: "2024-01-20T10:00:00Z",
         updatedAt: "2024-01-20T10:00:00Z"
     },
@@ -604,6 +619,12 @@ const mockServers = [
         os: "Debian 12",
         proxmoxVmid: 102,
         isMaintenance: false,
+        tags: [
+            "database",
+            "production",
+            "internal"
+        ],
+        lastBackup: "2024-12-14T01:00:00Z",
         createdAt: "2024-01-21T10:00:00Z",
         updatedAt: "2024-01-21T10:00:00Z"
     },
@@ -620,6 +641,11 @@ const mockServers = [
         os: "Ubuntu 22.04",
         proxmoxVmid: 201,
         isMaintenance: false,
+        tags: [
+            "api",
+            "production"
+        ],
+        lastBackup: "2024-12-14T03:00:00Z",
         createdAt: "2024-01-22T10:00:00Z",
         updatedAt: "2024-01-22T10:00:00Z"
     },
@@ -636,6 +662,11 @@ const mockServers = [
         os: "Ubuntu 22.04",
         proxmoxVmid: 301,
         isMaintenance: false,
+        tags: [
+            "app",
+            "staging"
+        ],
+        lastBackup: "2024-12-13T12:00:00Z",
         createdAt: "2024-02-05T10:00:00Z",
         updatedAt: "2024-02-05T10:00:00Z"
     },
@@ -652,6 +683,12 @@ const mockServers = [
         os: "Ubuntu 22.04",
         proxmoxVmid: 302,
         isMaintenance: false,
+        tags: [
+            "cache",
+            "staging",
+            "redis"
+        ],
+        lastBackup: "2024-12-12T10:00:00Z",
         createdAt: "2024-02-06T10:00:00Z",
         updatedAt: "2024-02-06T10:00:00Z"
     },
@@ -668,6 +705,11 @@ const mockServers = [
         os: "Debian 12",
         proxmoxVmid: 202,
         isMaintenance: true,
+        tags: [
+            "backup",
+            "infrastructure"
+        ],
+        lastBackup: "2024-12-14T00:00:00Z",
         createdAt: "2024-01-25T10:00:00Z",
         updatedAt: "2024-01-25T10:00:00Z"
     }
@@ -751,6 +793,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provid
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/cloud-provider-backoffice/components/ui/dropdown-menu.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$lib$2f$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/cloud-provider-backoffice/lib/mock-data.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$server$2d$status$2d$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/cloud-provider-backoffice/components/server-status-badge.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/cloud-provider-backoffice/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/cloud-provider-backoffice/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
@@ -760,22 +804,48 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provid
 ;
 ;
 ;
+;
+const container = {
+    hidden: {
+        opacity: 0
+    },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
+    }
+};
+const item = {
+    hidden: {
+        opacity: 0,
+        y: 20
+    },
+    show: {
+        opacity: 1,
+        y: 0
+    }
+};
 function ServersPage() {
     const [servers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$lib$2f$mock$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["mockServers"]);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
         className: "space-y-6",
+        variants: container,
+        initial: "hidden",
+        animate: "show",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-center justify-between",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                className: "flex items-center justify-between relative z-10",
+                variants: item,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "text-3xl font-bold text-foreground",
+                                className: "text-4xl font-bold text-foreground text-glow",
                                 children: "Virtual Machines"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                lineNumber: 25,
+                                lineNumber: 47,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -783,211 +853,232 @@ function ServersPage() {
                                 children: "Manage all provisioned VMs across nodes"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                lineNumber: 26,
+                                lineNumber: 48,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                        lineNumber: 24,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                        className: "glow-cyan hover:scale-[1.02] transition-transform",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
                                 className: "mr-2 h-4 w-4"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                lineNumber: 29,
+                                lineNumber: 51,
                                 columnNumber: 11
                             }, this),
                             "Add VM"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                        lineNumber: 28,
+                        lineNumber: 50,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                lineNumber: 23,
+                lineNumber: 45,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardTitle"], {
-                            children: [
-                                "All Virtual Machines (",
-                                servers.length,
-                                ")"
-                            ]
-                        }, void 0, true, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                variants: item,
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
+                    className: "bg-card/50 backdrop-blur-sm border-primary/20 shadow-lg relative overflow-hidden",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50"
+                        }, void 0, false, {
                             fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                            lineNumber: 36,
+                            lineNumber: 58,
                             columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                        lineNumber: 35,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "overflow-x-auto",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
-                                className: "w-full",
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
+                            className: "relative z-10",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardTitle"], {
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-                                            className: "border-b border-border text-left text-sm text-muted-foreground",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "pb-3 font-medium",
-                                                    children: "Hostname"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                                    lineNumber: 43,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "pb-3 font-medium",
-                                                    children: "Node"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                                    lineNumber: 44,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "pb-3 font-medium",
-                                                    children: "IP Address"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                                    lineNumber: 45,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "pb-3 font-medium",
-                                                    children: "Resources"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                                    lineNumber: 46,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "pb-3 font-medium",
-                                                    children: "OS"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                                    lineNumber: 47,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "pb-3 font-medium",
-                                                    children: "Status"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                                    lineNumber: 48,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "pb-3 font-medium",
-                                                    children: "Actions"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                                    lineNumber: 49,
-                                                    columnNumber: 19
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                            lineNumber: 42,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                        lineNumber: 41,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
-                                        children: servers.map((server)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ServerRow, {
-                                                server: server
-                                            }, server.id, false, {
-                                                fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                                lineNumber: 54,
-                                                columnNumber: 19
-                                            }, this))
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                        lineNumber: 52,
-                                        columnNumber: 15
-                                    }, this)
+                                    "All Virtual Machines (",
+                                    servers.length,
+                                    ")"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                lineNumber: 40,
+                                lineNumber: 60,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                            lineNumber: 39,
+                            lineNumber: 59,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardContent"], {
+                            className: "relative z-10",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "overflow-x-auto",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
+                                    className: "w-full",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                className: "border-b border-border text-left text-sm text-muted-foreground font-mono uppercase tracking-wider",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "pb-3 font-medium pl-4",
+                                                        children: "Hostname"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                                        lineNumber: 67,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "pb-3 font-medium",
+                                                        children: "Node"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                                        lineNumber: 68,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "pb-3 font-medium",
+                                                        children: "IP Address"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                                        lineNumber: 69,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "pb-3 font-medium",
+                                                        children: "Resources"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                                        lineNumber: 70,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "pb-3 font-medium",
+                                                        children: "OS"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                                        lineNumber: 71,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "pb-3 font-medium",
+                                                        children: "Status"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                                        lineNumber: 72,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                        className: "pb-3 font-medium text-right pr-4",
+                                                        children: "Actions"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                                        lineNumber: 73,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                                lineNumber: 66,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                            lineNumber: 65,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
+                                            children: servers.map((server)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ServerRow, {
+                                                    server: server
+                                                }, server.id, false, {
+                                                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                                    lineNumber: 78,
+                                                    columnNumber: 21
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                            lineNumber: 76,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                    lineNumber: 64,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                                lineNumber: 63,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                            lineNumber: 62,
                             columnNumber: 11
                         }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                        lineNumber: 38,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                    lineNumber: 57,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                lineNumber: 34,
+                lineNumber: 56,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-        lineNumber: 22,
+        lineNumber: 39,
         columnNumber: 5
     }, this);
 }
+;
 function ServerRow({ server }) {
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-        className: "border-b border-border last:border-0",
+        className: "border-b border-border/50 last:border-0 hover:bg-secondary/30 transition-colors group cursor-pointer",
+        onClick: ()=>router.push(`/servers/${server.id}`),
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                className: "py-4",
+                className: "py-4 pl-4",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "font-medium text-foreground",
+                            className: "font-medium text-foreground group-hover:text-primary transition-colors",
                             children: server.hostname
                         }, void 0, false, {
                             fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                            lineNumber: 70,
+                            lineNumber: 101,
                             columnNumber: 11
                         }, this),
                         server.proxmoxVmid && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-xs text-muted-foreground",
+                            className: "text-xs text-muted-foreground font-mono",
                             children: [
-                                "VM ID: ",
+                                "ID: ",
                                 server.proxmoxVmid
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                            lineNumber: 71,
+                            lineNumber: 102,
                             columnNumber: 34
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                    lineNumber: 69,
+                    lineNumber: 100,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                lineNumber: 68,
+                lineNumber: 99,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -995,21 +1086,21 @@ function ServerRow({ server }) {
                 children: server.nodeName
             }, void 0, false, {
                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                lineNumber: 74,
+                lineNumber: 105,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                className: "py-4 text-sm text-muted-foreground",
+                className: "py-4 text-sm text-muted-foreground font-mono",
                 children: server.ipAddress
             }, void 0, false, {
                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                lineNumber: 75,
+                lineNumber: 106,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                 className: "py-4",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-sm text-muted-foreground",
+                    className: "text-sm text-muted-foreground font-mono",
                     children: [
                         server.cpuCores,
                         "C / ",
@@ -1020,20 +1111,27 @@ function ServerRow({ server }) {
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                    lineNumber: 77,
+                    lineNumber: 108,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                lineNumber: 76,
+                lineNumber: 107,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                 className: "py-4 text-sm text-muted-foreground",
-                children: server.os
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "px-2 py-0.5 rounded bg-secondary border border-border text-xs uppercase font-medium",
+                    children: server.os
+                }, void 0, false, {
+                    fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
+                    lineNumber: 113,
+                    columnNumber: 9
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                lineNumber: 81,
+                lineNumber: 112,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1042,16 +1140,16 @@ function ServerRow({ server }) {
                     status: server.status
                 }, void 0, false, {
                     fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                    lineNumber: 83,
+                    lineNumber: 116,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                lineNumber: 82,
+                lineNumber: 115,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                className: "py-4",
+                className: "py-4 pr-4 text-right",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenu"], {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuTrigger"], {
@@ -1059,101 +1157,106 @@ function ServerRow({ server }) {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                 variant: "ghost",
                                 size: "icon",
+                                className: "hover:text-primary transition-colors",
+                                onClick: (e)=>e.stopPropagation(),
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$ellipsis$2d$vertical$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MoreVertical$3e$__["MoreVertical"], {
                                     className: "h-4 w-4"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                    lineNumber: 89,
+                                    lineNumber: 122,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                lineNumber: 88,
+                                lineNumber: 121,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                            lineNumber: 87,
+                            lineNumber: 120,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
                             align: "end",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
+                                    onClick: (e)=>e.stopPropagation(),
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$power$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Power$3e$__["Power"], {
                                             className: "mr-2 h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                            lineNumber: 94,
+                                            lineNumber: 127,
                                             columnNumber: 15
                                         }, this),
                                         server.status === "running" ? "Stop" : "Start"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                    lineNumber: 93,
+                                    lineNumber: 126,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
+                                    onClick: (e)=>e.stopPropagation(),
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$settings$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Settings$3e$__["Settings"], {
                                             className: "mr-2 h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 131,
                                             columnNumber: 15
                                         }, this),
                                         "Maintenance Mode"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                    lineNumber: 97,
+                                    lineNumber: 130,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                     fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                    lineNumber: 101,
+                                    lineNumber: 134,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
                                     className: "text-destructive",
+                                    onClick: (e)=>e.stopPropagation(),
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$cloud$2d$provider$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__["Trash2"], {
                                             className: "mr-2 h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 136,
                                             columnNumber: 15
                                         }, this),
                                         "Delete"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                                    lineNumber: 102,
+                                    lineNumber: 135,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                            lineNumber: 92,
+                            lineNumber: 125,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                    lineNumber: 86,
+                    lineNumber: 119,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-                lineNumber: 85,
+                lineNumber: 118,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/cloud-provider-backoffice/app/(dashboard)/servers/page.tsx",
-        lineNumber: 67,
+        lineNumber: 95,
         columnNumber: 5
     }, this);
 }

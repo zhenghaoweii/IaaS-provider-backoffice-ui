@@ -3,12 +3,16 @@
   "/(dashboard)/datacenters/page": "app/(dashboard)/datacenters/page.js",
   "/(dashboard)/nodes/page": "app/(dashboard)/nodes/page.js",
   "/(dashboard)/page": "app/(dashboard)/page.js",
+  "/(dashboard)/servers/[serverid]/page": "app/(dashboard)/servers/[serverid]/page.js",
   "/(dashboard)/servers/page": "app/(dashboard)/servers/page.js",
+  "/(dashboard)/settings/page": "app/(dashboard)/settings/page.js",
+  "/(dashboard)/terminals/page": "app/(dashboard)/terminals/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/activity/page": "app/activity/page.js",
   "/datacenters/page": "app/datacenters/page.js",
   "/login/page": "app/login/page.js",
   "/nodes/page": "app/nodes/page.js",
   "/page": "app/page.js",
-  "/servers/page": "app/servers/page.js"
+  "/servers/page": "app/servers/page.js",
+  "/terminal/[serverid]/page": "app/terminal/[serverid]/page.js"
 }

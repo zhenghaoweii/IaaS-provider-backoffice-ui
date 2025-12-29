@@ -13,6 +13,9 @@ export interface Datacenter {
   location: string
   apiEndpoint: string
   status: DatacenterStatus
+  infrastructureType: "rented" | "self-hosted"
+  hardwareVendor: string // e.g., "OVH", "Hetzner", "AWS", "Internal"
+  managementType: "managed" | "manual"
   createdAt: string
   updatedAt: string
 }
@@ -52,6 +55,8 @@ export interface Server {
   os: string
   proxmoxVmid?: number
   isMaintenance: boolean
+  tags: string[]
+  lastBackup: string
   createdAt: string
   updatedAt: string
 }
