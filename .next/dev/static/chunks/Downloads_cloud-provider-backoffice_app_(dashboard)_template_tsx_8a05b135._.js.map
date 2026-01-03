@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/haowei/Downloads/cloud-provider-backoffice/app/%28dashboard%29/template.tsx"],"sourcesContent":["\"use client\"\n\nimport { motion } from \"framer-motion\"\n\nexport default function Template({ children }: { children: React.ReactNode }) {\n    return (\n        <motion.div\n            initial={{ opacity: 0, y: 20, scale: 0.99 }}\n            animate={{ opacity: 1, y: 0, scale: 1 }}\n            exit={{ opacity: 0, y: -20, scale: 0.99 }}\n            transition={{ type: \"spring\", stiffness: 260, damping: 20 }}\n        >\n            {children}\n        </motion.div>\n    )\n}\n"],"names":[],"mappings":";;;;;AAEA;AAFA;;;AAIe,SAAS,SAAS,EAAE,QAAQ,EAAiC;IACxE,qBACI,6OAAC,uPAAM,CAAC,GAAG;QACP,SAAS;YAAE,SAAS;YAAG,GAAG;YAAI,OAAO;QAAK;QAC1C,SAAS;YAAE,SAAS;YAAG,GAAG;YAAG,OAAO;QAAE;QACtC,MAAM;YAAE,SAAS;YAAG,GAAG,CAAC;YAAI,OAAO;QAAK;QACxC,YAAY;YAAE,MAAM;YAAU,WAAW;YAAK,SAAS;QAAG;kBAEzD;;;;;;AAGb;KAXwB"}}]
-}
